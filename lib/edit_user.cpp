@@ -80,3 +80,8 @@ edit_user::~edit_user()
 {
     delete ui;
 }
+
+void edit_user::reject()
+{
+    edit_user::close();
+}

@@ -19,7 +19,7 @@ public:
 
 public slots:
     void accept();
-
+    void reject();
 private:
     Ui::edit_user *ui;
     user* m_user;
