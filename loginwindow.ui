@@ -58,7 +58,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="authButton">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -111,12 +111,32 @@
      <x>0</x>
      <y>0</y>
      <width>364</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>authButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>authorization()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>289</x>
+     <y>160</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>181</x>
+     <y>105</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>authorization()</slot>
+ </slots>
 </ui>

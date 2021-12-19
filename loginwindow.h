@@ -2,6 +2,9 @@
 #define LOGINWINDOW_H
 
 #include <QMainWindow>
+#include <vector>
+#include "user.h"
+#include "route.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,10 +18,19 @@ public:
     LoginWindow(QWidget *parent = nullptr);
     ~LoginWindow();
 
-private slots:
-    void on_pushButton_clicked();
+public slots:
+    void authorization();
+    void exit();
 
 private:
+    void load_users();
+    void load_routes();
+    void save_users();
+
+    int role = -1;
+    int index = -1;
     Ui::MainWindow *log;
+    std::vector<user> m_users;
+    std::vector<route> m_routes;
 };
 #endif // LOGINWINDOW_H

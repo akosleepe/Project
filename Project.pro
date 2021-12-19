@@ -12,26 +12,31 @@ SOURCES += \
     account.cpp \
     account_admin.cpp \
     adddriver.cpp \
+    clientmainwindow.cpp \
+    dispatchermainwindow.cpp \
     loginwindow.cpp \
     main.cpp \
-    mainwindow.cpp \
-    routes.cpp
+    route.cpp \
+    user.cpp
 
 HEADERS += \
     account.h \
     account_admin.h \
     adddriver.h \
+    clientmainwindow.h \
+    config.h \
+    dispatchermainwindow.h \
     loginwindow.h \
-    mainwindow.h \
-    routes.h
+    route.h \
+    user.h
 
 FORMS += \
     account.ui \
     account_admin.ui \
     adddriver.ui \
-    loginwindow.ui \
-    mainwindow.ui \
-    routes.ui
+    clientmainwindow.ui \
+    dispatchermainwindow.ui \
+    loginwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
