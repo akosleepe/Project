@@ -1,6 +1,7 @@
 #include "users_table.h"
 #include "ui_users_table.h"
 #include "edit_user.h"
+#include "adddriver.h"
 
 users_table::users_table(QWidget *parent) :
     QDialog(parent),
@@ -51,7 +52,16 @@ void users_table::addRows()
 
 void users_table::on_addButton_clicked()
 {
+    adddriver add_user;
+    user user;
 
+    add_user.setUser(&user);
+    if (add_user.exec() != users_table::Accepted)
+    {
+        return;
+    }
+    m_users->push_back(user);
+    setUsers(m_users);
 }
 
 void users_table::on_editButton_clicked()
