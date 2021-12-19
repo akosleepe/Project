@@ -508,11 +508,28 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>dispatcherMainWindow</receiver>
+   <slot>exit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>503</x>
+     <y>322</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>exportUsersCSV()</slot>
   <slot>importUsersCSV()</slot>
   <slot>exportRoutesCSV()</slot>
   <slot>importRoutesCSV()</slot>
+  <slot>exit()</slot>
  </slots>
 </ui>

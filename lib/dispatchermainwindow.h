@@ -25,7 +25,7 @@ public slots:
 //    void importUsersCSV();
 //    void exportCallsCSV();
 //    void importCallsCSV();
-//    void exit();
+    void exit();
 
 private slots:
     void on_routeButton_clicked();

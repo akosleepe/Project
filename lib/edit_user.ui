@@ -112,7 +112,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Добавление водителя</string>
+    <string>Редактирование водителя</string>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">

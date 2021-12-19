@@ -16,8 +16,8 @@ namespace config
     const char applicationVersion[] = "20211219";
     //! Название файла с пользователей
     const QString fileUsers = "users.tnb";
-    //! Настройки администратора и самой фирмы Call Center
-    const QString fileCalls = "calls.tnb";
+    //! Настройки администратора и самой фирмы Cargo transportation
+    const QString fileRoutes = "routes.tnb";
 
     const QString nameManagers = "Call Center Manager";
     const QString nameAdmin = "Admin";

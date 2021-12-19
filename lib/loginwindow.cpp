@@ -49,7 +49,7 @@ void LoginWindow::save_users()
 
 void LoginWindow::load_routes()
 {
-    QFile inf(config::fileCalls);
+    QFile inf(config::fileRoutes);
     inf.open(QIODevice::ReadOnly);
     QDataStream ist(&inf);
     m_routes.clear();

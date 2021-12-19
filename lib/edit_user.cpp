@@ -37,7 +37,7 @@ void edit_user::accept()
 
     if (login.size() > 20 || name.isEmpty())
     {
-        QMessageBox::warning(0, config::applicationName, "Название компании должно состоять не больше чем из 20 элементов");
+        QMessageBox::warning(0, config::applicationName, "Логин должен состоять не больше чем из 20 элементов");
         return;
     }
 
@@ -49,19 +49,19 @@ void edit_user::accept()
 
     if ( name.isEmpty() )
     {
-        QMessageBox::warning(0, config::applicationName, "Слишком длинный адрес");
+        QMessageBox::warning(0, config::applicationName, "Поля ФИО должно быть заполнено");
         return;
     }
 
     if ( password.isEmpty() )
     {
-        QMessageBox::warning(0, config::applicationName, "Слишком длинный адрес");
+        QMessageBox::warning(0, config::applicationName, "Поле пароля должно быть заполнено");
         return;
     }
 
     if ( driverExp.isEmpty() )
     {
-        QMessageBox::warning(0, config::applicationName, "Слишком длинный адрес");
+        QMessageBox::warning(0, config::applicationName, "Поле стажа должно быть заполнено");
         return;
     }
 

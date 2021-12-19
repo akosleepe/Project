@@ -235,10 +235,10 @@ void dispatcherMainWindow::on_callHistoryButton_clicked()
     ch.setRole(role);
     ch.exec();
 }
-
+*/
 void dispatcherMainWindow::exit()
 {
-    managerMainWindow::close();
+    dispatcherMainWindow::close();
 }
 
-*/
+

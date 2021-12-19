@@ -72,12 +72,12 @@ int user::getRole()
 
 void user::save(QDataStream &ost) const
 {
-    ost << name << password << number << login << driver_exp << QString("%1").arg(role);
+    ost << login << password << name << number << driver_exp << QString("%1").arg(role);
 }
 
 void user::load(QDataStream &ist)
 {
-    ist >> name >> password >> number >> login >> driver_exp;
+    ist >> login >> password >> name >> number >> driver_exp;
     QString tmp;
     ist >> tmp;
     role = tmp.toInt();
