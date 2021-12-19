@@ -11,32 +11,36 @@ CONFIG += c++11
 SOURCES += \
     account.cpp \
     account_admin.cpp \
-    adddriver.cpp \
     clientmainwindow.cpp \
     dispatchermainwindow.cpp \
+    edit_user.cpp \
     loginwindow.cpp \
     main.cpp \
     route.cpp \
-    user.cpp
+    user.cpp \
+    users_table.cpp
 
 HEADERS += \
     account.h \
     account_admin.h \
-    adddriver.h \
     clientmainwindow.h \
     config.h \
     dispatchermainwindow.h \
+    edit_user.h \
     loginwindow.h \
     route.h \
-    user.h
+    user.h \
+    users_table.h \
+    users_table.h
 
 FORMS += \
     account.ui \
     account_admin.ui \
-    adddriver.ui \
     clientmainwindow.ui \
     dispatchermainwindow.ui \
-    loginwindow.ui
+    edit_user.ui \
+    loginwindow.ui \
+    users_table.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
