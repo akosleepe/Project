@@ -21,9 +21,19 @@ public:
     void setIndex(int);
 
 public slots:
+    void exportUsersCSV();
+    void importUsersCSV();
+    void exportCallsCSV();
+    void importCallsCSV();
+    void exit();
 
 private slots:
+    void on_routeButton_clicked();
 
+    void on_driverButton_clicked();
+
+
+    void on_dispatcherButton_clicked();
 
 private:
     void save_users();
