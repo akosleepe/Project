@@ -120,23 +120,20 @@ void LoginWindow::authorization()
 
 }
 
-/*void LoginWindow::on_pushButton_clicked()
+void LoginWindow::about()
 {
-    QString login = log->login->text();
-    QString password = log->pass->text();
-    if(login=="Len" && password == "123")
-    {
-        QMessageBox::information(this,"Login","Успешно");
-        hide();
-        MainWindow window;
-        window.setModal(true);
-        window.exec();
-
-    }
-    else{
-        QMessageBox::warning(this,"Login","Не успешно");
-    }
-}*/
+    QMessageBox about(this);
+    about.setIcon(QMessageBox::Information);
+    about.setWindowTitle(QString("About %1").arg("Call Center"));
+    about.setText(QString("%1<br>"
+        "Author: <a href=\"mailto:leolastleo@gmail.com\">Lastovskiy Leonid Vitalievich</a><br>"
+        "Github: <a href=\"https://github.com/akosleepe/Project\">https://github.com/akosleepe/Project</a><br>"
+        "Icons by <a href=\"http://tango.freedesktop.org/"
+        "Tango_Desktop_Project\">The Tango! Desktop Project</a><br>"
+        "Version %1: %2<br> Version QT: %3")
+                  .arg(config::applicationName).arg(config::applicationVersion).arg(qVersion()));
+    about.exec();
+}
 void LoginWindow::exit()
 {
     LoginWindow::close();

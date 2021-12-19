@@ -20,6 +20,7 @@ public:
 
 public slots:
     void authorization();
+    void about();
     void exit();
 
 private:
