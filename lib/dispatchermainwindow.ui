@@ -411,6 +411,7 @@
     </widget>
     <addaction name="menuImport"/>
     <addaction name="menuExport"/>
+    <addaction name="actionExit"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -433,6 +434,11 @@
   <action name="actionExport_Users">
    <property name="text">
     <string>Export Users</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
    </property>
   </action>
  </widget>
