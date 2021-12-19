@@ -11,9 +11,9 @@
 namespace config
 {
     //! Название программы
-    const char applicationName[] = QT_TRANSLATE_NOOP("Config", "Call Center");
+    const char applicationName[] = QT_TRANSLATE_NOOP("Config", "Cargo transportation");
     //! Версия программы
-    const char applicationVersion[] = "20211205";
+    const char applicationVersion[] = "20211219";
     //! Название файла с пользователей
     const QString fileUsers = "users.tnb";
     //! Настройки администратора и самой фирмы Call Center
