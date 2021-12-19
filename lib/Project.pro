@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     account.cpp \
     account_admin.cpp \
+    adddriver.cpp \
     clientmainwindow.cpp \
     dispatchermainwindow.cpp \
     edit_user.cpp \
@@ -23,6 +24,7 @@ SOURCES += \
 HEADERS += \
     account.h \
     account_admin.h \
+    adddriver.h \
     clientmainwindow.h \
     config.h \
     dispatchermainwindow.h \
@@ -36,6 +38,7 @@ HEADERS += \
 FORMS += \
     account.ui \
     account_admin.ui \
+    adddriver.ui \
     clientmainwindow.ui \
     dispatchermainwindow.ui \
     edit_user.ui \
