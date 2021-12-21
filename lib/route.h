@@ -3,6 +3,7 @@
 
 
 #include <QString>
+#include <QDateTime>
 
 class route
 {
@@ -26,6 +27,13 @@ public:
     void setRouteId(QString);
     QString &getRouteId();
 
+    void setStartRoute(QDateTime);
+    void setStartRoute(QString);
+    QDateTime &getStartRoute();
+    void setEndRoute(QDateTime);
+    void setEndRoute(QString);
+    QDateTime &getEndRoute();
+
     void save(QDataStream &ost) const;
     void load(QDataStream &ist);
 private:
@@ -37,6 +45,8 @@ private:
     QString cargo_type;
     QString price;
     QString route_id;
+    QDateTime start_route;
+    QDateTime end_route;
 };
 
 inline QDataStream &operator<<(QDataStream &ost, const route &c)
