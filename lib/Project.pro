@@ -17,6 +17,7 @@ SOURCES += \
     loginwindow.cpp \
     main.cpp \
     route.cpp \
+    route_table.cpp \
     routehistory.cpp \
     user.cpp \
     users_table.cpp
@@ -30,6 +31,7 @@ HEADERS += \
     edit_user.h \
     loginwindow.h \
     route.h \
+    route_table.h \
     routehistory.h \
     user.h \
     users_table.h \
@@ -42,6 +44,7 @@ FORMS += \
     dispatchermainwindow.ui \
     edit_user.ui \
     loginwindow.ui \
+    route_table.ui \
     routehistory.ui \
     users_table.ui
 
