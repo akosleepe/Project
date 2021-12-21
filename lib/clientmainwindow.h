@@ -17,12 +17,15 @@ public:
     explicit clientMainWindow(QWidget *parent = nullptr);
     ~clientMainWindow();
     void setUsers(std::vector<user>);
-    void setRoute(std::vector<route>);
+    void setRoutes(std::vector<route>);
     void setIndexUser(int);
 
 public slots:
-
+    void exit();
 private slots:
+
+
+    void on_routeHistoryButton_clicked();
 
 private:
     Ui::clientMainWindow *ui;
@@ -32,7 +35,7 @@ private:
     route m_route;
     bool stop = false;
 
-    void save_routes(route);
+    void save_route(route);
 };
 
 #endif // CLIENTMAINWINDOW_HPP

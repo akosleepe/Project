@@ -28,7 +28,7 @@ void dispatcherMainWindow::setUsers(std::vector<user> m_users_)
     m_users = m_users_;
 }
 
-void dispatcherMainWindow::setRoute(std::vector<route> m_routes_)
+void dispatcherMainWindow::setRoutes(std::vector<route> m_routes_)
 {
     m_routes = m_routes_;
 }

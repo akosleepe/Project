@@ -1,3 +1,5 @@
+
+
 #include <QMessageBox>
 #include <QFile>
 #include <QSaveFile>
@@ -21,12 +23,13 @@ LoginWindow::LoginWindow(QWidget *parent)
 
     user admin;
     admin.setName(config::nameAdmin);
-    admin.setLogin(config::loginAdmin); // call center bank number
-    admin.setDriverExp(config::driverExp); // call center city
-    admin.setNumber(config::number); // call center number
-    admin.setRole(2); // call center admin role
-    admin.setPassword(config::passwordAdmin); // default password for admin
+    admin.setLogin(config::loginAdmin);
+    admin.setDriverExp(config::driverExp);
+    admin.setNumber(config::number);
+    admin.setRole(2);
+    admin.setPassword(config::passwordAdmin);
     m_users.push_back(admin);
+
 }
 
 LoginWindow::~LoginWindow()
@@ -98,16 +101,20 @@ void LoginWindow::authorization()
         if (role > 0)
         {
             QMessageBox::information(0, config::applicationName, "You'r succeful authorisation.");
-            dispatcherMainWindow *mmw = new dispatcherMainWindow;
-
-            mmw->show();
+            dispatcherMainWindow *dmw = new dispatcherMainWindow;
+            dmw->setUsers(m_users);
+            dmw->setRoutes(m_routes);
+            dmw->setIndex(index);
+            dmw->show();
             this->close();
         }
         else if (role == 0)
         {
             QMessageBox::information(0, config::applicationName, "You'r succeful authorisation.");
             clientMainWindow *cmw = new clientMainWindow;
-
+            cmw->setUsers(m_users);
+            cmw->setRoutes(m_routes);
+            cmw->setIndexUser(index);
             cmw->show();
             this->close();
         }

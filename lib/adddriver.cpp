@@ -52,8 +52,8 @@ void adddriver::accept()
     QString login = ui->loginEdit->text();
     QString number = ui->numberEdit->text();
     QString name = ui->nameEdit->text();
-    QString password = ui->nameEdit->text();
-    QString driverExp = ui->nameEdit->text();
+    QString password = ui->passwordEdit->text();
+    QString driverExp = ui->driverExpEdit->text();
 
     if (name.size() > 20 || name.isEmpty())
     {

@@ -32,8 +32,8 @@ void edit_user::accept()
     QString login = ui->loginEdit->text();
     QString num = ui->numberEdit->text();
     QString name = ui->nameEdit->text();
-    QString password = ui->nameEdit->text();
-    QString driverExp = ui->nameEdit->text();
+    QString password = ui->passwordEdit->text();
+    QString driverExp = ui->driverExpEdit->text();
 
     if (login.size() > 20 || name.isEmpty())
     {

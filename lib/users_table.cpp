@@ -72,12 +72,21 @@ void users_table::on_editButton_clicked()
 
     edit_user add_user;
 
+    for (;!checkRole(&m_users->at(i));i++)
+    {}
     add_user.setUser(&m_users->at(i));
     if (add_user.exec() != users_table::Accepted)
     {
         return;
     }
+
     setUsers(m_users);
+}
+bool users_table::checkRole(user* user)
+{
+    if (user->getRole()!=2)
+    return true;
+    else return false;
 }
 
 void users_table::on_deleteButton_clicked()

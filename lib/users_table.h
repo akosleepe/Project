@@ -19,13 +19,12 @@ public:
     void setUsers(std::vector<user>*);
     void addColumns();
     void addRows();
+    bool checkRole(user*);
 
 private slots:
 
     void on_addButton_clicked();
-
     void on_editButton_clicked();
-
     void on_deleteButton_clicked();
 
 private:

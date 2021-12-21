@@ -17,7 +17,7 @@ public:
     explicit dispatcherMainWindow(QWidget *parent = nullptr);
     ~dispatcherMainWindow();
     void setUsers(std::vector<user>);
-    void setRoute(std::vector<route>);
+    void setRoutes(std::vector<route>);
     void setIndex(int);
 
 public slots:
