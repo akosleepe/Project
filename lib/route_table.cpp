@@ -1,6 +1,6 @@
 #include "route_table.h"
 #include "ui_route_table.h"
-//#include "edit_user.h"
+#include "edit_route.h"
 #include "add_route.h"
 
 route_table::route_table(QWidget *parent) :
@@ -8,6 +8,7 @@ route_table::route_table(QWidget *parent) :
     ui(new Ui::route_table)
 {
     ui->setupUi(this);
+
 }
 
 void route_table::setRoutes(std::vector<route>* m_routes_)
@@ -15,6 +16,19 @@ void route_table::setRoutes(std::vector<route>* m_routes_)
     m_routes = m_routes_;
     addColumns();
     addRows();
+}
+
+void route_table::setUser(user m_user_)
+{
+    m_user = m_user_;
+}
+
+void route_table::checkRole(int role)
+{
+    if(role==2)
+    {
+        ui->takeButton->setEnabled(false);
+    }
 }
 
 route_table::~route_table()
@@ -67,24 +81,22 @@ void route_table::on_addButton_clicked()
     setRoutes(m_routes);
 }
 
-/*void route_table::on_editButton_clicked()
+void route_table::on_editButton_clicked()
 {
     QModelIndexList selection = ui->tableView->selectionModel()->selectedRows();
     QModelIndex index = selection.at(0);
     int i = index.row();
 
-    edit_user add_user;
+    edit_route add_route;
 
-    for (;!checkRole(&m_users->at(i));i++)
-    {}
-    add_user.setUser(&m_users->at(i));
-    if (add_user.exec() != users_table::Accepted)
+    add_route.setRoute(&m_routes->at(i));
+    if (add_route.exec() != route_table::Accepted)
     {
         return;
     }
 
-    setUsers(m_users);
-}*/
+    setRoutes(m_routes);
+}
 
 void route_table::on_deleteButton_clicked()
 {
@@ -94,3 +106,20 @@ void route_table::on_deleteButton_clicked()
     m_routes->erase(m_routes->begin() + ind);
     setRoutes(m_routes);
 }
+
+void route_table::on_takeButton_clicked()
+{
+    QModelIndexList selection = ui->tableView->selectionModel()->selectedRows();
+    QModelIndex index = selection.at(0);
+
+    int i = index.row();
+    edit_route add_route;
+
+    add_route.setRouteId(&m_routes->at(i),m_user.getId());
+    add_route.setStatus(&m_routes->at(i));
+
+    setRoutes(m_routes);
+
+}
+
+

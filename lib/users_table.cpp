@@ -15,6 +15,7 @@ void users_table::setUsers(std::vector<user>* m_users_)
     m_users = m_users_;
     addColumns();
     addRows();
+
 }
 
 users_table::~users_table()

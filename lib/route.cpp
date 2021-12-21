@@ -92,11 +92,11 @@ int route::getStatus()
 void route::save(QDataStream &ost) const
 {
     ost << loading_city << unloading_city << loading_date << cargo_weight << cargo_volume << cargo_type
-        << price << route_id;
+        << price << route_id << status << start_route << end_route;
 }
 
 void route::load(QDataStream &ist)
 {
     ist >> loading_city >> unloading_city >> loading_date >> cargo_weight >> cargo_volume >> cargo_type
-        >> price >> route_id;
+        >> price >> route_id >> status >> start_route >> end_route;
 }

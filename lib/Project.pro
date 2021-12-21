@@ -13,6 +13,7 @@ SOURCES += \
     adddriver.cpp \
     clientmainwindow.cpp \
     dispatchermainwindow.cpp \
+    edit_route.cpp \
     edit_user.cpp \
     loginwindow.cpp \
     main.cpp \
@@ -28,6 +29,7 @@ HEADERS += \
     clientmainwindow.h \
     config.h \
     dispatchermainwindow.h \
+    edit_route.h \
     edit_user.h \
     loginwindow.h \
     route.h \
@@ -42,6 +44,7 @@ FORMS += \
     adddriver.ui \
     clientmainwindow.ui \
     dispatchermainwindow.ui \
+    edit_route.ui \
     edit_user.ui \
     loginwindow.ui \
     route_table.ui \

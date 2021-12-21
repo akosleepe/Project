@@ -27,6 +27,8 @@ private slots:
 
     void on_routeHistoryButton_clicked();
 
+    void on_routeButton_clicked();
+
 private:
     Ui::clientMainWindow *ui;
     std::vector<user> m_users;
@@ -35,7 +37,7 @@ private:
     route m_route;
     bool stop = false;
 
-    void save_route(route);
+    void save_routes();
 };
 
 #endif // CLIENTMAINWINDOW_HPP

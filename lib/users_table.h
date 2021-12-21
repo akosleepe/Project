@@ -20,6 +20,8 @@ public:
     void addColumns();
     void addRows();
     bool checkRole(user*);
+    void setIndex(int);
+
 
 private slots:
 

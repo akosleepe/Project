@@ -27,6 +27,7 @@ private:
     void load_users();
     void load_routes();
     void save_users();
+    void save_routes();
 
     int role = -1;
     int index = -1;

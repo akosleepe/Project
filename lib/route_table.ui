@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>714</width>
-    <height>298</height>
+    <width>1016</width>
+    <height>376</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>10</x>
      <y>0</y>
-     <width>701</width>
-     <height>291</height>
+     <width>1011</width>
+     <height>371</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -46,6 +46,13 @@
     </item>
     <item row="0" column="0" colspan="4">
      <widget class="QTableView" name="tableView"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="takeButton">
+      <property name="text">
+       <string>Take route</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

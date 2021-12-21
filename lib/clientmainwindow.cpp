@@ -1,8 +1,10 @@
 #include "clientmainwindow.h"
 #include "ui_clientmainwindow.h"
 #include "routehistory.h"
+#include "route_table.h"
 #include "config.h"
 
+#include <QSaveFile>
 #include <QMessageBox>
 #include <QTimer>
 #include <QDateTime>
@@ -14,12 +16,16 @@ clientMainWindow::clientMainWindow(QWidget *parent) :
     ui->setupUi(this);
 }
 
-void clientMainWindow::save_route(route m_route_)
+void clientMainWindow::save_routes()
 {
-    QFile outf(config::fileRoutes);
-    outf.open(QIODevice::Append);
-    QDataStream out(&outf);
-    out << m_route_;
+    QSaveFile outf(config::fileRoutes);
+    outf.open(QIODevice::WriteOnly);
+    QDataStream ost(&outf);
+    for (size_t i = 0; i < m_routes.size(); i++)
+    {
+            ost << m_routes[i];
+    }
+    outf.commit();
 }
 
 void clientMainWindow::setIndexUser(int index_)
@@ -48,6 +54,15 @@ void clientMainWindow::on_routeHistoryButton_clicked()
     ch.setRoutes(m_routes);
     ch.setUser(m_users[index]);
     ch.exec();
+}
+
+void clientMainWindow::on_routeButton_clicked()
+{
+    route_table rt;
+    rt.checkRole(0);
+    rt.setRoutes(&m_routes);
+    rt.exec();
+    save_routes();
 }
 
 void clientMainWindow::setUsers(std::vector<user> m_users_)

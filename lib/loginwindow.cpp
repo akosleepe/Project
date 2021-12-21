@@ -50,6 +50,18 @@ void LoginWindow::save_users()
     outf.commit();
 }
 
+void LoginWindow::save_routes()
+{
+    QSaveFile outf(config::fileRoutes);
+    outf.open(QIODevice::WriteOnly);
+    QDataStream ost(&outf);
+    for (size_t i = 0; i < m_routes.size(); i++)
+    {
+            ost << m_routes[i];
+    }
+    outf.commit();
+}
+
 void LoginWindow::load_routes()
 {
     QFile inf(config::fileRoutes);

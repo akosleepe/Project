@@ -46,6 +46,10 @@ void dispatcherMainWindow::setIndex(int index_)
         ui->actionExport_Users->setEnabled(false);
         ui->actionExport_Routes->setEnabled(false);
     }
+    if(role==2)
+    {
+        ui->actionImport_Users->setEnabled(false);
+    }
 }
 
 void dispatcherMainWindow::save_users()
@@ -61,6 +65,17 @@ void dispatcherMainWindow::save_users()
     outf.commit();
 }
 
+void dispatcherMainWindow::save_routes()
+{
+    QSaveFile outf(config::fileRoutes);
+    outf.open(QIODevice::WriteOnly);
+    QDataStream ost(&outf);
+    for (size_t i = 0; i < m_routes.size(); i++)
+    {
+            ost << m_routes[i];
+    }
+    outf.commit();
+}
 
 void dispatcherMainWindow::on_dispatcherButton_clicked()
 {
@@ -70,9 +85,10 @@ void dispatcherMainWindow::on_dispatcherButton_clicked()
 void dispatcherMainWindow::on_routeButton_clicked()
 {
     route_table rt;
+    rt.checkRole(role);
     rt.setRoutes(&m_routes);
     rt.exec();
-    save_users();
+    save_routes();
 }
 
 

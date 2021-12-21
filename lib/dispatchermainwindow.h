@@ -37,7 +37,7 @@ private slots:
 
 private:
     void save_users();
-
+    void save_routes();
     Ui::dispatcherMainWindow *ui;
     std::vector<user> m_users;
     std::vector<route> m_routes;
