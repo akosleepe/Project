@@ -10,6 +10,7 @@
 #include "ui_dispatchermainwindow.h"
 #include "config.h"
 #include "users_table.h"
+#include "route_table.h"
 
 dispatcherMainWindow::dispatcherMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -68,7 +69,10 @@ void dispatcherMainWindow::on_dispatcherButton_clicked()
 
 void dispatcherMainWindow::on_routeButton_clicked()
 {
-
+    route_table rt;
+    rt.setRoutes(&m_routes);
+    rt.exec();
+    save_users();
 }
 
 
