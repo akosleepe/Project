@@ -87,7 +87,7 @@ void LoginWindow::authorization()
 
         for (size_t i = 0; i < m_users.size(); i++)
         {
-            if ((m_users[i].getName() == login) && (m_users[i].getPassword() == password))
+            if ((m_users[i].getLogin() == login) && (m_users[i].getPassword() == password))
             {
                 role = m_users[i].getRole();
                 index = i;
