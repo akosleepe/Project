@@ -19,15 +19,17 @@ public:
     void setUsers(std::vector<user>);
     void setRoutes(std::vector<route>);
     void setIndexUser(int);
+    void startRouteTime();
 
 public slots:
     void exit();
 private slots:
 
-
+    void updateDisplayedValues();
     void on_routeHistoryButton_clicked();
-
     void on_routeButton_clicked();
+    void on_startRouteButton_clicked();
+    void on_endRouteButton_clicked();
 
 private:
     Ui::clientMainWindow *ui;

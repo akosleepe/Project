@@ -86,6 +86,35 @@ int route::getStatus()
     return status;
 }
 
+void route::setStartRoute(QDateTime start_)
+{
+    start_route = start_;
+}
+
+void route::setStartRoute(QString start_)
+{
+    start_route = QDateTime::fromString(start_, "dd MMM yyyy HH:mm:ss");
+}
+
+QDateTime &route::getStartRoute()
+{
+    return start_route;
+}
+
+void route::setEndRoute(QDateTime end_)
+{
+    end_route = end_;
+}
+
+void route::setEndRoute(QString end_)
+{
+    end_route = QDateTime::fromString(end_, "dd MMM yyyy HH:mm:ss");
+}
+
+QDateTime &route::getEndRoute()
+{
+    return end_route;
+}
 
 
 

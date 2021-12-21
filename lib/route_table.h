@@ -24,7 +24,7 @@ public:
     void setIndex(int);
     void checkRole(int);
     void setUser(user);
-
+    bool checkStatus(route*);
 private slots:
 
     void on_addButton_clicked();

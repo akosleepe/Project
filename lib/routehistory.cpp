@@ -14,8 +14,6 @@ void routehistory::setRole(int role_)
 {
     role = role_;
 
-    //if (role > 0)
-        //addRowsForManager();
 }
 void routehistory::setIndex(int index_)
 {
@@ -26,7 +24,7 @@ void routehistory::setUser(user m_user_)
 {
     m_user = m_user_;
 
-    //addRowsForClient();
+    addRowsForClient();
 }
 
 void routehistory::setRoutes(std::vector<route> m_routes_)
@@ -45,27 +43,28 @@ void routehistory::addColumns()
     ui->tableView->setModel(tbl);
 }
 
-/*void routehistory::addRowsForClient()
+void routehistory::addRowsForClient()
 {
     for (size_t i = 0; i < m_routes.size(); i++)
     {
-        if ( ( m_routes[i].getNameCalled() == m_user.getName() )
-                || ( m_routes[i].getNameCalling() == m_user.getName() ) )
+        if ( ( m_routes[i].getRouteId() == m_user.getId() )
+             || ( m_routes[i].getStatus() == 2 ) )
         {
                 QList<QStandardItem *> standardItemsList;
-                standardItemsList.append(new QStandardItem(m_calls[i].getNameCalled()));
-                standardItemsList.append(new QStandardItem(m_calls[i].getNumCalled()));
-                standardItemsList.append(new QStandardItem(m_calls[i].getCityCalled()));
-                standardItemsList.append(new QStandardItem(m_calls[i].getNameCalling()));
-                standardItemsList.append(new QStandardItem(m_calls[i].getNumCalling()));
-                standardItemsList.append(new QStandardItem(m_calls[i].getCityCalling()));
-                standardItemsList.append(new QStandardItem(m_calls[i].getStartCall().toString("dd MMM yyyy HH:mm:ss")));
-                standardItemsList.append(new QStandardItem(m_calls[i].getEndCall().toString("dd MMM yyyy HH:mm:ss")));
+                standardItemsList.append(new QStandardItem(m_routes[i].getLoadingCity()));
+                standardItemsList.append(new QStandardItem(m_routes[i].getUnloadingCity()));
+                standardItemsList.append(new QStandardItem(m_routes[i].getLoadingDate()));
+                standardItemsList.append(new QStandardItem(m_routes[i].getCargoWeight()));
+                standardItemsList.append(new QStandardItem(m_routes[i].getCargoVolume()));
+                standardItemsList.append(new QStandardItem(m_routes[i].getCargoType()));
+                standardItemsList.append(new QStandardItem(m_routes[i].getPrice()));
+                standardItemsList.append(new QStandardItem(m_routes[i].getStartRoute().toString("dd MMM yyyy HH:mm:ss")));
+                standardItemsList.append(new QStandardItem(m_routes[i].getEndRoute().toString("dd MMM yyyy HH:mm:ss")));
 
-                QTime time = m_calls[i].getEndCall().time();
-                time = time.addSecs(-60 * m_calls[i].getStartCall().time().minute());
-                time = time.addSecs(-1 * m_calls[i].getStartCall().time().second());
-                time = time.addSecs(-3600 * m_calls[i].getStartCall().time().hour());
+                QTime time = m_routes[i].getEndRoute().time();
+                time = time.addSecs(-60 * m_routes[i].getStartRoute().time().minute());
+                time = time.addSecs(-1 * m_routes[i].getStartRoute().time().second());
+                time = time.addSecs(-3600 * m_routes[i].getStartRoute().time().hour());
                 standardItemsList.append(new QStandardItem(time.toString()));
                 tbl->insertRow(tbl->rowCount(), standardItemsList);
         }
@@ -75,25 +74,28 @@ void routehistory::addColumns()
 
 void routehistory::addRowsForManager()
 {
-    for (size_t i = 0; i < m_calls.size(); i++)
+    for (size_t i = 0; i < m_routes.size(); i++)
     {
         QList<QStandardItem *> standardItemsList;
-        standardItemsList.append(new QStandardItem(m_calls[i].getNameCalled()));
-        standardItemsList.append(new QStandardItem(m_calls[i].getNumCalled()));
-        standardItemsList.append(new QStandardItem(m_calls[i].getCityCalled()));
-        standardItemsList.append(new QStandardItem(m_calls[i].getNameCalling()));
-        standardItemsList.append(new QStandardItem(m_calls[i].getNumCalling()));
-        standardItemsList.append(new QStandardItem(m_calls[i].getCityCalling()));
-        standardItemsList.append(new QStandardItem(m_calls[i].getStartCall().toString()));
-        standardItemsList.append(new QStandardItem(m_calls[i].getEndCall().toString()));
+        standardItemsList.append(new QStandardItem(m_routes[i].getLoadingCity()));
+        standardItemsList.append(new QStandardItem(m_routes[i].getUnloadingCity()));
+        standardItemsList.append(new QStandardItem(m_routes[i].getLoadingDate()));
+        standardItemsList.append(new QStandardItem(m_routes[i].getCargoWeight()));
+        standardItemsList.append(new QStandardItem(m_routes[i].getCargoVolume()));
+        standardItemsList.append(new QStandardItem(m_routes[i].getCargoType()));
+        standardItemsList.append(new QStandardItem(m_routes[i].getPrice()));
+        standardItemsList.append(new QStandardItem(m_routes[i].getStartRoute().toString()));
+        standardItemsList.append(new QStandardItem(m_routes[i].getEndRoute().toString()));
 
-        QTime time = m_calls[i].getEndCall().time();
-        time = time.addSecs(-60 * m_calls[i].getStartCall().time().minute());
-        time = time.addSecs(-1 * m_calls[i].getStartCall().time().second());
-        time = time.addSecs(-3600 * m_calls[i].getStartCall().time().hour());
+        QTime time = m_routes[i].getEndRoute().time();
+        time = time.addSecs(-60 * m_routes[i].getStartRoute().time().minute());
+        time = time.addSecs(-1 * m_routes[i].getStartRoute().time().second());
+        time = time.addSecs(-3600 * m_routes[i].getStartRoute().time().hour());
         standardItemsList.append(new QStandardItem(time.toString()));
         tbl->insertRow(tbl->rowCount(), standardItemsList);
-    }*/
+    }
+}
+
 routehistory::~routehistory()
 {
     delete ui;

@@ -29,6 +29,12 @@ void route_table::checkRole(int role)
     {
         ui->takeButton->setEnabled(false);
     }
+    else
+    {
+        ui->addButton->setEnabled(false);
+        ui->editButton->setEnabled(false);
+        ui->deleteButton->setEnabled(false);
+    }
 }
 
 route_table::~route_table()
@@ -88,7 +94,8 @@ void route_table::on_editButton_clicked()
     int i = index.row();
 
     edit_route add_route;
-
+    for (;!checkStatus(&m_routes->at(i));i++)
+    {}
     add_route.setRoute(&m_routes->at(i));
     if (add_route.exec() != route_table::Accepted)
     {
@@ -113,13 +120,21 @@ void route_table::on_takeButton_clicked()
     QModelIndex index = selection.at(0);
 
     int i = index.row();
-    edit_route add_route;
 
-    add_route.setRouteId(&m_routes->at(i),m_user.getId());
-    add_route.setStatus(&m_routes->at(i));
+    for (;!checkStatus(&m_routes->at(i));i++)
+    {}
+
+    m_routes->at(i).setRouteId(m_user.getId());
+    m_routes->at(i).setStatus(1);
 
     setRoutes(m_routes);
 
 }
 
+bool route_table::checkStatus(route* route)
+{
+    if (route->getStatus()==0)
+    return true;
+    else return false;
+}
 
