@@ -77,9 +77,6 @@ QString &route::getRouteId()
 }
 
 
-
-
-
 void route::save(QDataStream &ost) const
 {
     ost << loading_city << unloading_city << loading_date << cargo_weight << cargo_volume << cargo_type
