@@ -41,11 +41,16 @@ void adddriver::setDriverExp(QString m_driverExp_)
     ui->driverExpEdit->setText(m_driverExp_);
 }
 
+void adddriver::setId(QString m_id_)
+{
+    ui->idEdit->setText(m_id_);
+}
 
 void adddriver::setUser(user *m_user_)
 {
     m_user = m_user_;
 }
+
 
 void adddriver::accept()
 {
@@ -54,8 +59,9 @@ void adddriver::accept()
     QString name = ui->nameEdit->text();
     QString password = ui->passwordEdit->text();
     QString driverExp = ui->driverExpEdit->text();
+    QString id = ui->idEdit->text();
 
-    if (name.size() > 20 || name.isEmpty())
+    if (name.size() > 50 || name.isEmpty())
     {
         QMessageBox::warning(0, config::applicationName, "Название компании должно состоять не больше чем из 20 элементов");
         return;
@@ -97,11 +103,19 @@ void adddriver::accept()
         QMessageBox::warning(0, config::applicationName, "Этот логин уже есть в базе дынных");
         return;
     }
+
+    if ( id.isEmpty() || id.size() > 5 )
+    {
+        QMessageBox::warning(0, config::applicationName, "Поля id должно быть заполнено и должно состоять не больше чем из 5 элементов");
+        return;
+    }
+
     m_user->setName(name);
     m_user->setNumber(number);
     m_user->setLogin(login);
     m_user->setDriverExp(driverExp);
     m_user->setPassword(password);
+    m_user->setId(id);
     m_user->setRole(0);
 
     return QDialog::accept();

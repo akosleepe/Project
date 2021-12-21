@@ -70,14 +70,24 @@ int user::getRole()
     return role;
 }
 
+QString &user::getId()
+{
+    return id;
+}
+
+void user::setId(QString id_)
+{
+    id = id_;
+}
+
 void user::save(QDataStream &ost) const
 {
-    ost << login << password << name << number << driver_exp << QString("%1").arg(role);
+    ost << login << password << name << number << driver_exp << id << QString("%1").arg(role);
 }
 
 void user::load(QDataStream &ist)
 {
-    ist >> login >> password >> name >> number >> driver_exp;
+    ist >> login >> password >> name >> number >> driver_exp >> id;
     QString tmp;
     ist >> tmp;
     role = tmp.toInt();

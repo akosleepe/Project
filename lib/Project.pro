@@ -9,8 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    account.cpp \
-    account_admin.cpp \
+    add_route.cpp \
     adddriver.cpp \
     clientmainwindow.cpp \
     dispatchermainwindow.cpp \
@@ -23,8 +22,7 @@ SOURCES += \
     users_table.cpp
 
 HEADERS += \
-    account.h \
-    account_admin.h \
+    add_route.h \
     adddriver.h \
     clientmainwindow.h \
     config.h \
@@ -38,8 +36,7 @@ HEADERS += \
     users_table.h
 
 FORMS += \
-    account.ui \
-    account_admin.ui \
+    add_route.ui \
     adddriver.ui \
     clientmainwindow.ui \
     dispatchermainwindow.ui \

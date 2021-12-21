@@ -27,6 +27,9 @@ public:
     void setRouteId(QString);
     QString &getRouteId();
 
+    void setStatus(int);
+    int getStatus();
+
     void setStartRoute(QDateTime);
     void setStartRoute(QString);
     QDateTime &getStartRoute();
@@ -45,6 +48,7 @@ private:
     QString cargo_type;
     QString price;
     QString route_id;
+    int status;
     QDateTime start_route;
     QDateTime end_route;
 };

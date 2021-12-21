@@ -3,7 +3,7 @@
 
 
 #include <QString>
-
+#include <vector>
 
 class user
 {
@@ -21,6 +21,8 @@ public:
     QString &getNumber();
     void setDriverExp(QString);
     QString &getDriverExp();
+    void setId(QString);
+    QString &getId();
     void setRole(int);
     int getRole();
 
@@ -32,6 +34,7 @@ private:
     QString name;
     QString number;
     QString driver_exp;
+    QString id;
     int role;
 };
 

@@ -21,6 +21,7 @@ public:
     void setPassword(QString);
     void setNumber(QString);
     void setDriverExp(QString);
+    void setId(QString);
     void setUser(user*);
 
 public slots:

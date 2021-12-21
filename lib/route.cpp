@@ -76,6 +76,18 @@ QString &route::getRouteId()
     return route_id;
 }
 
+void route::setStatus(int status_)
+{
+    status = status_;
+}
+
+int route::getStatus()
+{
+    return status;
+}
+
+
+
 
 void route::save(QDataStream &ost) const
 {

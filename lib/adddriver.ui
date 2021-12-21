@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
-    <height>309</height>
+    <width>451</width>
+    <height>355</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>20</x>
      <y>60</y>
      <width>141</width>
-     <height>181</height>
+     <height>221</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -93,6 +93,20 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QLabel" name="label_10">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Id</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -101,7 +115,7 @@
      <x>160</x>
      <y>60</y>
      <width>271</width>
-     <height>181</height>
+     <height>221</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -119,6 +133,9 @@
     </item>
     <item>
      <widget class="QLineEdit" name="passwordEdit"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="idEdit"/>
     </item>
    </layout>
   </widget>
@@ -146,7 +163,7 @@
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>250</y>
+     <y>290</y>
      <width>231</width>
      <height>51</height>
     </rect>

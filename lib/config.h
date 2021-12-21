@@ -19,9 +19,9 @@ namespace config
     //! Настройки администратора и самой фирмы Cargo transportation
     const QString fileRoutes = "routes.tnb";
 
-    const QString nameManagers = "Call Center Manager";
+    const QString nameManagers = "dispatcher";
     const QString nameAdmin = "Admin";
-    const QString loginAdmin = "adminCallCenter";
+    const QString loginAdmin = "Admin";
     const QString passwordAdmin = "12345";
     const QString driverExp = "Krasnoyarsk";
     const QString number = "+79509777777";

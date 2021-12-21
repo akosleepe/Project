@@ -22,6 +22,7 @@ void edit_user::setUser(user* m_user_)
         ui->driverExpEdit->setText(m_user->getDriverExp());
         ui->passwordEdit->setText(m_user->getPassword());
         ui->loginEdit->setText(m_user->getLogin());
+        ui->idEdit->setText(m_user->getId());
     }
     else
         ui->numberEdit->setReadOnly(false);
@@ -34,10 +35,11 @@ void edit_user::accept()
     QString name = ui->nameEdit->text();
     QString password = ui->passwordEdit->text();
     QString driverExp = ui->driverExpEdit->text();
+    QString id = ui->idEdit->text();
 
-    if (login.size() > 20 || name.isEmpty())
+    if (login.size() > 40 || login.isEmpty())
     {
-        QMessageBox::warning(0, config::applicationName, "Логин должен состоять не больше чем из 20 элементов");
+        QMessageBox::warning(0, config::applicationName, "Имя должно состоять не больше чем из 40 элементов");
         return;
     }
 
@@ -65,13 +67,18 @@ void edit_user::accept()
         return;
     }
 
-
+    if ( id.isEmpty() || id.size() > 5 )
+    {
+        QMessageBox::warning(0, config::applicationName, "Поля id должно быть заполнено и должно состоять не больше чем из 5 элементов");
+        return;
+    }
 
     m_user->setName(name);
     m_user->setNumber(num);
     m_user->setLogin(login);
     m_user->setDriverExp(driverExp);
     m_user->setPassword(password);
+    m_user->setId(id);
 
     return QDialog::accept();
 }
